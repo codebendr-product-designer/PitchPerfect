@@ -44,7 +44,6 @@ class PlaySoundsViewController: UIViewController {
     }
     
     // MARK: Actions
-    
     @IBAction func playSoundForButton(_ sender: UIButton) {
      
         switch(ButtonType(rawValue: sender.tag)!) {

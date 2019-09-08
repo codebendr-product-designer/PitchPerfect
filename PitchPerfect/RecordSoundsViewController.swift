@@ -37,7 +37,8 @@ class RecordSoundsViewController: UIViewController {
     }
     
     @IBAction func recordAudio(_ sender: Any) {
-      
+        
+        configureUI(isRecording: true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -45,11 +46,17 @@ class RecordSoundsViewController: UIViewController {
         let filePath = URL(string: pathArray.joined(separator: "/"))
         
         let session = AVAudioSession.sharedInstance()
-//        try! session.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
-        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
-        try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
-        audioRecorder.delegate = self
+        do {
+            try session.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
+            try session.setActive(true)
+            audioRecorder = try AVAudioRecorder(url: filePath!, settings: [:])
+            audioRecorder.delegate = self
+            print("recording")
+        } catch {
+            print("error recording")
+        }
+  
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
@@ -58,8 +65,7 @@ class RecordSoundsViewController: UIViewController {
     }
     
     @IBAction func stopRecording(_ sender: Any) {
-        
-
+        configureUI(isRecording: false)
         
         audioRecorder.stop()
         try! AVAudioSession.sharedInstance().setActive(false)
