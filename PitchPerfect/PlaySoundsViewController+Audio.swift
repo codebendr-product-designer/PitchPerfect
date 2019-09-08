@@ -37,10 +37,11 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         // initialize (recording) audio file
         do {
             audioFile = try AVAudioFile(forReading: recordedAudioURL)
+                print("Audio has been setup")
         } catch {
             showAlert(Alerts.AudioFileError, message: String(describing: error))
         }
-           print("Audio has been setup")
+       
     }
     
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {

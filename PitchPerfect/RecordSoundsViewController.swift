@@ -21,7 +21,6 @@ class RecordSoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
-        // Do any additional setup after loading the view.
     }
     
     func configureUI(isRecording: Bool) {
@@ -38,15 +37,12 @@ class RecordSoundsViewController: UIViewController {
     
     @IBAction func recordAudio(_ sender: Any) {
         
-        configureUI(isRecording: true)
-        
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
         
         let session = AVAudioSession.sharedInstance()
-        
         do {
             try session.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
             try session.setActive(true)
@@ -56,25 +52,23 @@ class RecordSoundsViewController: UIViewController {
         } catch {
             print("error recording")
         }
-  
+        
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
-        
-        
+    
+        configureUI(isRecording: true)
+       
     }
     
     @IBAction func stopRecording(_ sender: Any) {
-        configureUI(isRecording: false)
-        
         audioRecorder.stop()
         try! AVAudioSession.sharedInstance().setActive(false)
+        configureUI(isRecording: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let destination = segue.destination
-        
         if let playSoundsViewController = destination as? PlaySoundsViewController {
             playSoundsViewController.recordedAudioURL = sender as? URL
         }
