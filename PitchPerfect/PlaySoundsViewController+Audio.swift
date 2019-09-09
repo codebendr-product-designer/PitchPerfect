@@ -102,13 +102,13 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             
             // schedule a stop timer for when audio finishes playing
             self.stopTimer = Timer(timeInterval: delayInSeconds, target: self, selector: #selector(PlaySoundsViewController.stopAudio), userInfo: nil, repeats: false)
-            RunLoop.main.add(self.stopTimer!, forMode: RunLoop.Mode.default)
+            RunLoop.main.add(self.stopTimer!, forMode: .default)
         }
         
         do {
             try audioEngine.start()
         } catch {
-            showAlert(Alerts.AudioEngineError, message: String(describing: error))
+//            showAlert(title: AppConstants.alerts.audioEngineError, message: String(describing: error))
             return
         }
         

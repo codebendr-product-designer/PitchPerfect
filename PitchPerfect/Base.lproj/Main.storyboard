@@ -40,7 +40,6 @@
                                 <color key="tintColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
                                 <state key="normal" image="Stop"/>
                                 <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P0n-0I-BWa"/>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6KB-5I-vUY"/>
                                 </connections>
                             </button>

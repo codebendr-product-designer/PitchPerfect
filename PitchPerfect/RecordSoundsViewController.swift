@@ -56,9 +56,9 @@ class RecordSoundsViewController: UIViewController {
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
-    
+        
         configureUI(isRecording: true)
-       
+        
     }
     
     @IBAction func stopRecording(_ sender: Any) {
