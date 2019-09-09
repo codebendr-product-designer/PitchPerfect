@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F3FC8D1232713EE00BE7F64 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3FC8D0232713EE00BE7F64 /* Alerts.swift */; };
 		9F79F5602322A6A4000E1E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79F55F2322A6A4000E1E90 /* AppDelegate.swift */; };
 		9F79F5622322A6A4000E1E90 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79F5612322A6A4000E1E90 /* RecordSoundsViewController.swift */; };
 		9F79F5652322A6A5000E1E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F79F5632322A6A5000E1E90 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F3FC8D0232713EE00BE7F64 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		9F79F55C2322A6A4000E1E90 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F79F55F2322A6A4000E1E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F79F5612322A6A4000E1E90 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				9F79F55F2322A6A4000E1E90 /* AppDelegate.swift */,
+				9F3FC8D0232713EE00BE7F64 /* Alerts.swift */,
 				9F79F5612322A6A4000E1E90 /* RecordSoundsViewController.swift */,
 				9F79F57123239523000E1E90 /* PlaySoundsViewController.swift */,
 				9F79F5632322A6A5000E1E90 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F79F5622322A6A4000E1E90 /* RecordSoundsViewController.swift in Sources */,
+				9F3FC8D1232713EE00BE7F64 /* Alerts.swift in Sources */,
 				9F79F57423245D2F000E1E90 /* PlaySoundsViewController+Audio.swift in Sources */,
 				9F79F57223239523000E1E90 /* PlaySoundsViewController.swift in Sources */,
 				9F79F5602322A6A4000E1E90 /* AppDelegate.swift in Sources */,
